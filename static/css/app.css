@@ -1,0 +1,9 @@
+:root {
+    --app-font: "Ubuntu", sans-serif, "Tahoma";
+    --app-primary: #adc4d5;
+    --app-accent: #c779c5;
+}
+
+* {
+    font-family: var(--app-font);
+}
