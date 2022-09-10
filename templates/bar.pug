@@ -1,4 +1,9 @@
-mixin bar()
+- var navItems = ["files", "home", "text"]
+- var active = "active"
+
+mixin bar(aitem)
     footer
-        nav 
-            h1.shadow Logo
+        nav.nav-bar.bottom-app-bar
+            each item in navItems
+                div.nav-item(class={active: aitem == item})
+                    a(href="/")= item

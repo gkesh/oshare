@@ -1,0 +1,8 @@
+{% set test = {'hello': '1', 'hi': '2'} %}<!DOCTYPE html>
+<html>
+  <body>
+    <ul>{% for key,val in __pypugjs_iter(test,2) %}
+      <li{{__pypugjs_attrs(terse=True, attrs=[('class', ((val)))])}}>{{key|escape}}</li>{% endfor %}
+    </ul>
+  </body>
+</html>
