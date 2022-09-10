@@ -6,4 +6,8 @@ mixin bar(aitem)
         nav.nav-bar.bottom-app-bar
             each item in navItems
                 div.nav-item(class={active: aitem == item})
-                    a(href="/")= item
+                    - var isHome = item == "home"
+                    if isHome
+                        a(href="/")= item
+                    else
+                        a(href="/"+item)= item   
