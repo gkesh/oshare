@@ -17,3 +17,16 @@ async def home():
         'title': "Local"
     }
     return await render_template('index.pug', **data)
+
+@bp_home.route('/profile')
+async def profile():
+    data = {
+        'title': "@gkesh",
+        'user': {
+            'uname': "@gkesh",
+            'fname': "Jikesh Thapa",
+            'gender': "M",
+            'age': 24
+        }
+    }
+    return await render_template('profile.pug', **data)

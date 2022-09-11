@@ -102,12 +102,12 @@ div.nav-link.active > a, div.menu-link.active > a {
     font-weight: bold;
 }
 
-.btn.btn-primary {
+.btn-primary {
     color: var(--app-primary-dark);
     background-color: var(--app-primary);
 }
 
-.btn.btn-accent {
+.btn-accent {
     color: var(--app-accent-dark);
     background-color: var(--app-accent);
 }
@@ -122,20 +122,20 @@ div.nav-link.active > a, div.menu-link.active > a {
     display: flex;
 }
 
-.flex.flex-row {
+.flex-row {
     flex-direction: row;
     gap: 20px;
 }
 
-.flex.flex-column {
+.flex-column {
     flex-direction: column;
 }
 
-.flex.align-center {
+.align-center {
     align-items: center;
 }
 
-.flex.justify-center {
+.justify-center {
     justify-content: center;
 }
 

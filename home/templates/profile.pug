@@ -1,0 +1,20 @@
+extends /app
+
+block body
+    main.container.flex-column
+        h1 #{ user.fname }
+        table 
+            tr 
+                td Username
+                td #{ user.uname }
+            tr 
+                td Gender
+                - var isMale = user.gender == "M"
+                if isMale 
+                    td Male 
+                else 
+                    td Female
+
+            tr 
+                td Age 
+                td {{user.age}} Years Old
