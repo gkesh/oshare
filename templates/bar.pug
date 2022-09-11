@@ -1,13 +1,36 @@
 - var navItems = ["files", "home", "text"]
 - var active = "active"
 
+mixin link(item, holder, aitem)
+    div(class=holder class={active: aitem == item})
+        - var isHome = item == "home"
+        if isHome
+            a(href="/")= item
+        else
+            a(href="/"+item)= item
+
 mixin bar(aitem)
+    section#link-menu.menu.dialog.show-m
+        .menu-content
+            each item in navItems 
+                +link(item, "menu-link", aitem)
     footer
-        nav.nav-bar.bottom-app-bar
-            each item in navItems
-                div.nav-item(class={active: aitem == item})
-                    - var isHome = item == "home"
-                    if isHome
-                        a(href="/")= item
-                    else
-                        a(href="/"+item)= item   
+        nav.nav-bar.container
+            .nav-item.logo
+                img(src="/static/img/oshare.png" alt="Logo")
+            .nav-item.hide-m.links.flex.flex-row
+                each item in navItems
+                    +link(item, "nav-link", aitem)
+            .flex.flex-row.align-center
+                .nav-item.profile
+                    a.btn.btn-primary(href="/profile")
+                        span.hide-m Hi, @gkesh
+                        span.show-m G
+                .nav-item.show-m.flex.align-center
+                    button#menu-trigger.clear
+                        .hamburger.flex.flex-column
+                            div
+                            div 
+                            div
+    script(type="text/javascript" src="/static/js/bar.js")
+        

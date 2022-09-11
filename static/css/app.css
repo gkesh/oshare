@@ -1,8 +1,15 @@
 :root {
     --app-font: "Ubuntu", sans-serif, "Tahoma";
-    --app-primary: #adc4d5;
-    --app-accent: #c779c5;
+    --app-primary: #bdadd5;
+    --app-primary-dark: #5a4c74;
+    --app-accent: #90b47b;
+    --app-accent-dark: #5a714c;
     --app-text: #444;
+    --app-muted: #f2f2f2;
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
 }
 
 * {
@@ -10,34 +17,191 @@
     color: var(--app-text);
 }
 
-nav.bottom-app-bar {
+main {
+    padding-top: 2rem;
+}
+
+footer {
     position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
-}
-
-nav.nav-bar {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
-    gap: 50px;
-    padding: 1rem 0;
     box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.05);
 }
 
-div.nav-item {
+a {
+    text-decoration: none;
+}
+
+nav.nav-bar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+div.nav-item, div.menu-link {
     text-transform: capitalize;
     font-weight: bold;
     font-size: 1.1em;
 }
 
-div.nav-item > a{
-    color: var(--app-text);
-    text-decoration: none;
+div.nav-item.logo > img {
+    height: 40px;
+    width: auto;
 }
 
-div.nav-item.active > a {
+div.nav-item.links {
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+div.nav-link.active > a, div.menu-link.active > a {
     color: var(--app-accent);
+}
+
+/* Custom classes */
+.container {
+    max-width: 60vw;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+@media screen and (max-width: 960px) {
+    .container {
+        max-width: 80vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 90vw;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .hide-m {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 541px) {
+    .show-m {
+        display: none !important;
+    }
+}
+/* Button Styling */
+.btn {
+    border-radius: var(--radius-sm);
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.btn.btn-primary {
+    color: var(--app-primary-dark);
+    background-color: var(--app-primary);
+}
+
+.btn.btn-accent {
+    color: var(--app-accent-dark);
+    background-color: var(--app-accent);
+}
+
+.clear {
+    background: none;
+    border: none;
+}
+
+/* Flex styling */
+.flex {
+    display: flex;
+}
+
+.flex.flex-row {
+    flex-direction: row;
+    gap: 20px;
+}
+
+.flex.flex-column {
+    flex-direction: column;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.flex.justify-center {
+    justify-content: center;
+}
+
+/* Jumbotron Styling */
+.jumbotron {
+    padding: 56px;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    background-color: var(--app-muted);
+}
+
+.jumbotron h1 {
+    font-size: 3em;
+    font-weight: 900;
+    margin: 0px;
+    margin-bottom: 24px;
+}
+
+.jumbotron p {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+/* Hamburger styling */
+.hamburger {
+    justify-content: space-between;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.hamburger > div {
+    height: 6px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: var(--app-text);
+}
+
+/* Menu Styling */
+.menu {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    justify-content: center;
+    align-items: flex-end;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: var(--radius-md);
+}
+
+.menu-link:not(:last-child) {
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--app-muted);
 }
