@@ -82,15 +82,13 @@ div.nav-link.active > a, div.menu-link.active > a {
     .container {
         max-width: 90vw;
     }
-}
 
-@media screen and (max-width: 540px) {
     .hide-m {
         display: none !important;
     }
 }
 
-@media screen and (min-width: 541px) {
+@media screen and (min-width: 769px) {
     .show-m {
         display: none !important;
     }
@@ -144,7 +142,8 @@ div.nav-link.active > a, div.menu-link.active > a {
     padding: 56px;
     width: 100%;
     border-radius: var(--radius-lg);
-    background-color: var(--app-muted);
+    background-size: cover !important;
+    background-position: left bottom !important;
 }
 
 .jumbotron h1 {
@@ -158,8 +157,14 @@ div.nav-link.active > a, div.menu-link.active > a {
     font-size: 1.1em;
     font-weight: 500;
     margin-bottom: 30px;
+    max-width: 50%;
 }
 
+@media screen and (max-width: 768px) {
+    .jumbotron p {
+        max-width: 70%;
+    }
+}
 /* Hamburger styling */
 .hamburger {
     justify-content: space-between;
@@ -194,8 +199,8 @@ div.nav-link.active > a, div.menu-link.active > a {
     flex-direction: column;
     width: 80%;
     height: auto;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
     background: white;
     border-radius: var(--radius-md);
 }

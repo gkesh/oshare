@@ -1,5 +1,5 @@
-mixin jumbotron(heading, text, cta)
-    .jumbotron 
+mixin jumbotron(heading, text, cta, bg = "var(--app-muted)")
+    .jumbotron(style="background: {{bg}}") 
         h1= heading 
         p= text 
         a.btn.btn-primary= cta
