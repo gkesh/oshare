@@ -1,0 +1,6 @@
+mixin jumbotron(heading, paras, cta, bg = "var(--app-muted)")
+    .jumbotron(style="background: {{bg}}") 
+        h1= heading
+        for para in paras
+            p= para
+        a.btn.btn-primary= cta

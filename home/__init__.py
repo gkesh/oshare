@@ -13,7 +13,7 @@ bp_home = Blueprint(
 @bp_home.route('/')
 async def home():
     data = {
-        'title': 'Local',
+        'title': 'Home',
         'static': '/home/static'
     }
     return await render_template('index.pug', **data)
