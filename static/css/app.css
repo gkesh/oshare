@@ -157,16 +157,28 @@ div.nav-link.active > a, div.menu-link.active > a {
     font-size: 1.1em;
     font-weight: 500;
     margin-bottom: 10px;
-    max-width: 50%;
+    max-width: 60%;
 }
 
 .jumbotron p:last-of-type {
     margin-bottom: 30px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
     .jumbotron p {
         max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .jumbotron p {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .jumbotron p {
+        max-width: 100%;
     }
 }
 /* Hamburger styling */
