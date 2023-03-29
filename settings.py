@@ -1,0 +1,1 @@
+ACCEPTABLE_FORMATS = ["png", "jpeg", "jpg", "svg", "pdf"]

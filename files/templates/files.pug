@@ -3,4 +3,7 @@ extends /app
 block body 
     main.container
         +jumbotron(title, jtron.content, jtron.cta, "url('" + static + "/banner.png')")
+        form(method="POST" action="/api/v1/forms" enctype="multipart/form-data")
+            input(type="file" name="upfile")
+            button(type="submit") Upload
     +bar("files")
